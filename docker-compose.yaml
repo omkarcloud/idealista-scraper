@@ -1,0 +1,10 @@
+services:
+  idealista-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Optional — a Spanish residential proxy keeps steady volume past idealista's DataDome checks.
+      # - IDEALISTA_PROXY=http://user:pass@host:port
